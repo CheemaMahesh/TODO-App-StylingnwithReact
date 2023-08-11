@@ -14,6 +14,11 @@ export class Form extends Component {
     });
   };
 
+  handleClick = () => {
+    this.props.onAdd(this.state.text);
+    this.setState({ text: "" });
+  };
+
   render() {
     return (
       <div className="form">
@@ -23,7 +28,7 @@ export class Form extends Component {
           placeholder="Whats on your mind?"
           required
         />
-        <button>Add</button>
+        <button onClick={this.handleClick}>Add</button>
       </div>
     );
   }
